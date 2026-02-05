@@ -7,6 +7,7 @@
 
 
 int main() {
+    std::cout <<"Initializing chip program\n";
     gpiod_chip* chip = gpiod_chip_open("/dev/gpiochip0");
     if (!chip) {
         std::cerr << "can't open gpio chip\n";
@@ -14,7 +15,7 @@ int main() {
     }
 
     std::cout << "opened gpio chip\n";
-
+    
     gpiod_chip_info* chip_info = gpiod_chip_get_info(chip);
     if (!chip_info) {
         std::cerr << "chip info is null\n";
